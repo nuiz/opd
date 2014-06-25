@@ -29,7 +29,6 @@ class Que implements MessageComponentInterface {
 
     public function __construct(){
         $this->clients = new \SplObjectStorage();
-        $this->clients_show = new \SplObjectStorage();
     }
 
     function onOpen(ConnectionInterface $conn)
@@ -111,17 +110,11 @@ class Que implements MessageComponentInterface {
     public function showUpdate(ConnectionInterface $from = null){
         $ctl = new ShowCTL();
         $data = $ctl->show();
-        if(!is_null($from)){
-            $this->clients_show->attach($from);
-            $this->send($from, 'show/update', $data);
-            return;
+        if(is_null($from)) {
+            $this->sendAll('show/update', $data);
         }
-        $this->clients_show->rewind();
-        while($this->clients_show->valid()) {
-            $client = $this->clients_show->current();
-            $this->clients->next();
-
-            $this->send($client, 'show/update', $data);
+        else {
+            $this->send($from, 'show/update', $data);
         }
     }
 

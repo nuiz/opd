@@ -20,7 +20,7 @@
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> ทั่วไป
                     </div>
                 </div>
@@ -34,7 +34,7 @@
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> FollowUp
                     </div>
                 </div>
@@ -48,7 +48,7 @@
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> Chronic
                     </div>
                 </div>
@@ -62,7 +62,7 @@
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> ตรวจสุขภาพ
                     </div>
                 </div>
@@ -76,7 +76,7 @@
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> เฉพาะทาง
                     </div>
                 </div>
@@ -86,11 +86,12 @@
             </div>
         </div>
     </div>
+    <!--
     <div class="show-block" pt_type="เด็ก">
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> เด็ก
                     </div>
                 </div>
@@ -100,11 +101,12 @@
             </div>
         </div>
     </div>
+    -->
     <div class="show-block" pt_type="อื่นๆ">
         <div class="row-fluid dep-ctx">
             <div class="span12 box">
                 <div class="box-header red-background">
-                    <div class="text-right title" style="float: right;">
+                    <div class="text-right title">
                         <i class="icon-list"></i> อื่นๆ
                     </div>
                 </div>
@@ -121,7 +123,7 @@ $(function(){
     function slide(){
         var section = sw.data('section');
         section++;
-        if(section >= 7){
+        if(section >= 6){
             section = 0;
         }
 

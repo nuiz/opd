@@ -256,7 +256,7 @@ $em = Local::getEM();
                     <option value="Chronic">Chronic</option>
                     <option value="ตรวจสุขภาพ">ตรวจสุขภาพ</option>
                     <option value="เฉพาะทาง">เฉพาะทาง</option>
-                    <option value="เด็ก">เด็ก</option>
+                    <!--<option value="เด็ก">เด็ก</option>-->
                     <option value="อื่นๆ">อื่นๆ</option>
                 </select>
 
