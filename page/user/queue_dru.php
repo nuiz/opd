@@ -191,7 +191,7 @@ $em = Local::getEM();
                             $(function(){
                                 $('#select_department').change(function(e){
                                     var val = $(this).val();
-                                    if(val=='all'){
+                                    if(val.toLowerCase()=='all'){
                                         $('.que-tr').show();
                                         return;
                                     }
@@ -250,6 +250,7 @@ $em = Local::getEM();
             <div>
                 <span>Department</span>
                 <select id="select_department">
+                    <option value="All">All</option>
                     <option value="ทั่วไป">ทั่วไป</option>
                     <option value="FollowUp">FollowUp</option>
                     <option value="Chronic">Chronic</option>
