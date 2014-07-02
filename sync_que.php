@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: p2
@@ -82,7 +82,7 @@ foreach($items as $item){
 
 
 if(count($add) > 0){
-    $wsClient = new \Main\Socket\Client\WsClient($_SERVER['HTTP_HOST'], 8083);
+    $wsClient = new \Main\Socket\Client\WsClient("127.0.0.1", 8083);
 
     $json = json_encode(array(
         'action'=> 'add',

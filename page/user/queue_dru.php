@@ -68,7 +68,7 @@ $em = Local::getEM();
                 return;
             }
 
-            $('.s-name', sc).text($('.hn_name', trQ).text());
+            $('.s-name', sc).text($('.name', trQ).text());
             var img = $('.s-img', sc);
             img.unbind('error');
             img.error(function(e){
@@ -85,6 +85,7 @@ $em = Local::getEM();
             $('.s-skip-btn', sc).unbind('click.skip').bind('click.skip', function(e){
                 e.preventDefault();
                 $('.skip-btn', trQ).click();
+                sc.slideUp();
             });
 
             $('.hide-btn span').unbind('update-text');
@@ -148,7 +149,6 @@ $em = Local::getEM();
                 if (action==='skip') {
                     // Do some script
                     $('.s-skip-btn', sc).click();
-                    sc.slideUp();
 
                 }
                 else if (action==='hide') {
@@ -284,6 +284,7 @@ $em = Local::getEM();
                     <option value="5">ห้องตรวจ 5</option>
                     <option value="6">ห้องตรวจ 6</option>
                     <option value="7">ห้องตรวจ 7</option>
+                    <option value="8">ห้องตรวจ 8</option>
                 </select>
             </div>
 
@@ -454,11 +455,9 @@ $(function(){
     function remark(tr, text){
         if(text != "") {
             tr.addClass('red-background-remark');
-            console.log('if');
         }
         else {
             tr.removeClass('red-background-remark');
-            console.log('else');
         }
         $('.remark-input', tr).val(text);
     }
@@ -511,37 +510,42 @@ $(function(){
         var suffix_path, room_path, room_name;
         if(suffix.val() == 1){
             suffix_path = 'public/sounds/room_opd/r-1.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/1.JPG';
             room_name = 'ห้องตรวจ 1';
         }
         else if(suffix.val() == 2){
             suffix_path = 'public/sounds/room_opd/r-2.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/2.JPG';
             room_name = 'ห้องตรวจ 2';
         }
         else if(suffix.val() == 3){
             suffix_path = 'public/sounds/room_opd/r-3.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/3.JPG';
             room_name = 'ห้องตรวจ 3';
         }
         else if(suffix.val() == 4){
             suffix_path = 'public/sounds/room_opd/r-4.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/4.JPG';
             room_name = 'ห้องตรวจ 4';
         }
         else if(suffix.val() == 5){
             suffix_path = 'public/sounds/room_opd/r-5.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/5.JPG';
             room_name = 'ห้องตรวจ 5';
         }
         else if(suffix.val() == 6){
             suffix_path = 'public/sounds/room_opd/r-6.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/6.JPG';
             room_name = 'ห้องตรวจ 6';
         }
         else if(suffix.val() == 7){
             suffix_path = 'public/sounds/room_opd/r-7.wav';
-            room_path = 'public/img/patterns/3.png';
+            room_path = 'public/img/opd_room/7.JPG';
+            room_name = 'ห้องตรวจ 7';
+        }
+        else if(suffix.val() == 8){
+            suffix_path = 'public/sounds/room_opd/r-8.wav';
+            room_path = 'public/img/opd_room/8.JPG';
             room_name = 'ห้องตรวจ 7';
         }
 
@@ -638,6 +642,8 @@ $(function(){
             else if(event =='hideMany'){
                 hideMany(data);
             }
+            data = null;
+            json = null;
         };
 
         conn.onerror = function(){

@@ -1,4 +1,4 @@
-<style type="text/css">
+﻿<style type="text/css">
 .yellow-bg {
     background-color: #FEFCCB;
     border-bottom-color: #E5DB55;
@@ -16,7 +16,7 @@
     <div class="span12 box">
         <div class="box-header red-background">
             <div class="text-right title" style="float: right;">
-                <i class="icon-list"></i> รายชื่อคิว
+                <i class="icon-list"></i> รายชื่อคิว  <span id="time"></span>
             </div>
         </div>
         <div class="box-content" style="padding:0px;">
@@ -26,6 +26,14 @@
 </div>
 <script type="text/javascript">
 $(function(){
+function date() {
+        var now = new Date(),
+            now = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+        $('#time').html(now);
+    }
+    date();
+    setInterval(date, 1000);
+
     var ctx = $('.dep-ctx');
 
     function fetchYellow(){

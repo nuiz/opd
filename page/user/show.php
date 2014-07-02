@@ -1,4 +1,4 @@
-<style type="text/css">
+﻿<style type="text/css">
 #slide-wrap {
     -webkit-transition: 500ms all;
     -moz-transition: 500ms all;
@@ -13,6 +13,20 @@
 
     height: 100%;
     width: 400px;
+}
+</style>
+<style type="text/css">
+.yellow-bg {
+    background-color: #FEFCCB;
+    border-bottom-color: #E5DB55;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+}
+.red-background-remark {
+    background: #FFD2D3;
+    border-bottom-color: #DF8F90;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
 }
 </style>
 <div id="slide-wrap" data-section="0" style="height: 100%; width: 3000px;">
@@ -176,12 +190,20 @@ $(function(){
                     //'fullscreen=yes' // only works in IE, but here for completeness
                 ].join(',');
 
-                var w = window.open('index.php?page=user/call_dru&id='+data.id, '', params);
-                w.onload = function(){
-                    w.onunload = function(){
-                        callStack.call();
-                    };
-                }
+                var href = 'index.php?page=user/call_dru&id='+data.id;
+
+                var w = window.open(href, '', params);
+                var interval = window.setInterval(function() {
+                    try {
+                        if (w == null || w.closed) {
+                            window.clearInterval(interval);
+                            callStack.call();
+                        }
+                    }
+                    catch (e) {
+                        alert('error');
+                    }
+                }, 100);
             }
         };
 
@@ -206,12 +228,13 @@ $(function(){
                     }
                 }
                 else if(event=='show/update'){
-                    console.log(data);
                     for(var i in data){
                         $('.show-block[pt_type="'+data[i].name+'"] .box-content').html(data[i].html);
                     }
                     fetchYellow();
                 }
+                data = null;
+                json = null;
             };
 
             conn.onerror = function(){
