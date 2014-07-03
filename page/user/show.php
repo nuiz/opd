@@ -38,6 +38,12 @@
                         <i class="icon-list"></i> ทั่วไป
                     </div>
                 </div>
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
+                </div>
                 <div class="box-content" style="padding:0px;">
 
                 </div>
@@ -51,6 +57,13 @@
                     <div class="text-right title">
                         <i class="icon-list"></i> FollowUp
                     </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
                 </div>
                 <div class="box-content" style="padding:0px;">
 
@@ -66,6 +79,12 @@
                         <i class="icon-list"></i> Chronic
                     </div>
                 </div>
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
+                </div>
                 <div class="box-content" style="padding:0px;">
 
                 </div>
@@ -80,6 +99,12 @@
                         <i class="icon-list"></i> ตรวจสุขภาพ
                     </div>
                 </div>
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
+                </div>
                 <div class="box-content" style="padding:0px;">
 
                 </div>
@@ -93,6 +118,12 @@
                     <div class="text-right title">
                         <i class="icon-list"></i> เฉพาะทาง
                     </div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
                 </div>
                 <div class="box-content" style="padding:0px;">
 
@@ -109,6 +140,12 @@
                         <i class="icon-list"></i> เด็ก
                     </div>
                 </div>
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
+                </div>
                 <div class="box-content" style="padding:0px;">
 
                 </div>
@@ -123,6 +160,12 @@
                     <div class="text-right title">
                         <i class="icon-list"></i> อื่นๆ
                     </div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="public/img/support/moph_logo.png" style="width: 60px;">
+                    <img src="public/img/support/NSTDA.png" style="width: 124px;">
+                    <img src="public/img/support/oy.png" style="width: 96px;">
+                    <img src="public/img/support/sscm.png" style="width: 74px;">
                 </div>
                 <div class="box-content" style="padding:0px;">
 

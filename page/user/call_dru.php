@@ -2,6 +2,10 @@
 $em = Local::getEM();
 $vem = Local::getVEM();
 
+function isEng($str){
+    return strlen($str) == strlen(utf8_decode($str));
+}
+
 $item = $em->getRepository('Main\Entity\Que\Call')->find($_GET['id']);
 $que = $em->getRepository('Main\Entity\Que\Que')->findOneBy(array('vn_id' => $item->getVnId()));
 
@@ -20,13 +24,13 @@ $suffix_path = $item->getSuffixPath();
 
 // name sound
 $first_name = $que->getPName();
-$firstname_path = 'public/sounds/firstname/'.$que->getHnId().'.mp3';
+$firstname_path = 'public/sounds/firstname/'.$que->getVnId().'.mp3';
 
 $last_name = $que->getPSurname();
-$lastname_path = 'public/sounds/lastname/'.$que->getHnId().'.mp3';
+$lastname_path = 'public/sounds/lastname/'.$que->getVnId().'.mp3';
 
 if (!is_file($firstname_path) || filesize($firstname_path) == 0) {
-    $lang = preg_match('/[ก-๙]/i', $first_name)? 'th': 'en';
+    $lang = isEng($first_name)? 'en': 'th';
 	$fcontent = file_get_contents("http://translate.google.com/translate_tts?tl={$lang}&ie=UTF-8&q=".urlencode($first_name));
 	$fp = fopen($firstname_path, 'w');
 	fwrite($fp, $fcontent);
@@ -34,7 +38,7 @@ if (!is_file($firstname_path) || filesize($firstname_path) == 0) {
 }
 
 if (!is_file($lastname_path) || filesize($lastname_path) == 0) {
-    $lang = preg_match('/[ก-๙]/i', $last_name)? 'th': 'en';
+    $lang = isEng($last_name)? 'en': 'th';
 	$lcontent = file_get_contents("http://translate.google.com/translate_tts?tl={$lang}&ie=UTF-8&q=".urlencode($last_name));
 	$fp = fopen($lastname_path, 'w');
 	fwrite($fp, $lcontent);

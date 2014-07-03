@@ -10,6 +10,10 @@ require_once 'bootstrap.php';
 
 set_time_limit(300);
 
+function isEng($str){
+    return strlen($str) == strlen(utf8_decode($str));
+}
+
 $em = Local::getEM();
 $vem = Local::getVEM();
 
@@ -30,6 +34,7 @@ $rs = array();
 $add = array();
 foreach($items as $item){
     /** @var Main\Entity\View\QVisit $item */
+    $ptType = $item->getPttype();
     $que = new Main\Entity\Que\Que();
     $que->setId($item->getVnId());
     $que->setVnId($item->getVnId());
@@ -43,7 +48,7 @@ foreach($items as $item){
     $que->setDepName(tis620_to_utf8($item->getDepName()));
     $que->setDru(false);
     $que->setCas($item->getCas());
-    $que->setPtType($item->getPttype());
+    $que->setPtType(trim($ptType));
 
     $em->persist($que);
     $em->flush();
@@ -58,21 +63,16 @@ foreach($items as $item){
     }
 
     // download mp3 name,surname
-    $lang = 'th';
-    if(!preg_match('/[ก-๙]/i', $que->getPName())){
-        $lang = 'en';
-    }
+    $lang = isEng($que->getPName())? 'en': 'th';
+
     $fcontent = file_get_contents("http://translate.google.com/translate_tts?tl={$lang}&ie=UTF-8&q=".urlencode($que->getPName()));
-    $fp = fopen("public/sounds/firstname/".$que->getHnId().".mp3", 'w');
+    $fp = fopen("public/sounds/firstname/".$que->getVnId().".mp3", 'w');
     fwrite($fp, $fcontent);
     fclose($fp);
 
-    $lang = 'th';
-    if(!preg_match('/[ก-๙]/i', $que->getPSurname())){
-        $lang = 'en';
-    }
+    $lang = isEng($que->getPSurname())? 'en': 'th';
     $fcontent = file_get_contents("http://translate.google.com/translate_tts?tl={$lang}&ie=UTF-8&q=".urlencode($que->getPSurname()));
-    $fp = fopen("public/sounds/lastname/".$que->getHnId().".mp3", 'w');
+    $fp = fopen("public/sounds/lastname/".$que->getVnId().".mp3", 'w');
     fwrite($fp, $fcontent);
     fclose($fp);
 
